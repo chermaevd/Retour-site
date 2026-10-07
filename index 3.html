@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Retour : vos clients ne sont pas partis, ils ont oublié</title>
+<meta name="description" content="Retour rappelle vos clients au bon moment, avec une offre de retour à usage unique. 29 € par mois, satisfait ou remboursé 30 jours.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Retour : vos clients ne sont pas partis, ils ont oublié">
+<meta property="og:description" content="Un rappel au bon moment, une offre à usage unique, et vos clients reviennent. 29 € par mois, satisfait ou remboursé.">
+<meta property="og:url" content="https://retour-site.vercel.app/">
+<meta property="og:image" content="https://retour-site.vercel.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sapin:#0F3B2E;
+  --safran:#F2B01E;
+  --texte:#17201B;
+  --pierre:#EEEFEA;
+  --blanc:#FFFFFF;
+  --titre:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --corps:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;font-family:var(--corps);font-size:1.0625rem;line-height:1.55;color:var(--texte);background:var(--blanc)}
+h1,h2,h3{font-family:var(--titre);line-height:1.12;margin:0 0 .6em;letter-spacing:-.01em}
+h1{font-size:2.35rem;font-weight:800}
+h2{font-size:1.65rem;font-weight:800}
+h3{font-size:1.15rem;font-weight:600}
+p{margin:0 0 1em}
+a{color:inherit}
+.wrap{max-width:38rem;margin:0 auto;padding:0 1.25rem}
+section{padding:2.75rem 0}
+.btn{display:block;width:100%;min-height:3.4rem;padding:1rem 1.25rem;border-radius:.4rem;background:var(--safran);color:var(--sapin);font-family:var(--titre);font-weight:800;font-size:1.15rem;text-align:center;text-decoration:none;border:2px solid var(--sapin)}
+.btn:hover{background:#f6c04d}
+.btn:focus-visible,summary:focus-visible,a:focus-visible{outline:3px solid var(--safran);outline-offset:3px}
+.note{font-size:.95rem;margin:.7rem 0 0;text-align:center}
+
+/* En-tête et hero */
+.hero{background:var(--sapin);color:var(--blanc);padding:1.25rem 0 2.75rem}
+.logo{font-family:var(--titre);font-weight:800;font-size:1.3rem;margin:0 0 2rem}
+.hero p.lead{font-size:1.15rem;opacity:.92}
+.sms{position:relative;background:var(--blanc);color:var(--texte);border-radius:1.1rem 1.1rem 1.1rem .2rem;padding:1rem 1.1rem;margin:1.75rem 0 1.75rem;max-width:21rem;box-shadow:0 0 0 3px rgba(242,176,30,.6)}
+.sms small{display:block;color:#5b655f;margin-bottom:.35rem;font-size:.85rem}
+.sms strong{color:var(--sapin)}
+
+/* Douleur */
+.douleur{background:var(--pierre)}
+.calcul{background:var(--blanc);border-left:6px solid var(--safran);padding:1rem 1.1rem;margin:1.25rem 0}
+.calcul .gros{font-family:var(--titre);font-weight:800;font-size:2rem;color:var(--sapin);display:block}
+
+/* Bénéfices */
+.benefices h3{margin-bottom:.2em}
+.benefices div{padding:1rem 0;border-top:2px solid var(--pierre)}
+.benefices div:first-of-type{border-top:0}
+
+/* Étapes */
+.etapes{background:var(--pierre)}
+.etapes ol{list-style:none;margin:0;padding:0;counter-reset:e}
+.etapes li{counter-increment:e;position:relative;padding:0 0 1.25rem 3rem}
+.etapes li::before{content:counter(e);position:absolute;left:0;top:-.15rem;width:2.1rem;height:2.1rem;border-radius:50%;background:var(--sapin);color:var(--blanc);font-family:var(--titre);font-weight:800;text-align:center;line-height:2.1rem}
+
+/* Offre */
+.offre{background:var(--sapin);color:var(--blanc)}
+.prix{font-family:var(--titre);font-weight:800;font-size:3rem;line-height:1;margin:.25rem 0}
+.prix span{font-size:1.1rem;font-weight:600}
+.jour{margin:0 0 1.25rem;opacity:.92}
+.garantie{background:var(--blanc);color:var(--texte);border-radius:.4rem;padding:1rem 1.1rem;margin:1.25rem 0}
+.garantie h3{color:var(--sapin);margin-bottom:.3em}
+.garantie p:last-child{margin:0}
+.offre .note{color:var(--blanc)}
+
+/* FAQ */
+details{border-top:2px solid var(--pierre);padding:.9rem 0}
+details:last-of-type{border-bottom:2px solid var(--pierre)}
+summary{font-family:var(--titre);font-weight:600;font-size:1.1rem;cursor:pointer;min-height:2.75rem;display:flex;align-items:center}
+details p{margin:.5rem 0 0}
+
+/* Pied de page */
+footer{background:var(--pierre);padding:1.75rem 0;font-size:.95rem}
+footer a{display:inline-block;padding:.35rem 0;margin-right:1rem}
+
+@media (min-width:48rem){
+  h1{font-size:3.2rem}
+  h2{font-size:2rem}
+  section{padding:3.75rem 0}
+  .btn{width:auto;display:inline-block;padding:1rem 2.25rem}
+  .note{text-align:left}
+}
+</style>
+<script>window.va=window.va||function(){(window.va.q=window.va.q||[]).push(arguments)};</script>
+<script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="logo">Retour</p>
+    <h1>Vos clients ne sont pas partis. Ils ont oublié.</h1>
+    <p class="lead">Retour envoie à chacun un rappel au bon moment, avec une offre valable une seule fois. Vous ne tenez aucun fichier, vous ne relancez personne.</p>
+    <div class="sms" aria-label="Exemple de message envoyé à un client">
+      <small>Message envoyé à votre client, 5 semaines après sa visite</small>
+      Bonjour Marie, ça fait un moment ! <strong>-10 % sur votre prochaine visite</strong>, valable une seule fois. À bientôt chez nous.
+    </div>
+    <a class="btn" href="https://buy.stripe.com/test_eVq8wO9pvd750tt77Z6wE00">Je veux que mes clients reviennent</a>
+    <p class="note">29 € par mois. Sans engagement, résiliable à tout moment.</p>
+  </div>
+</header>
+
+<main>
+<section class="douleur">
+  <div class="wrap">
+    <h2>Un client satisfait ne revient pas parce qu'il oublie, pas parce qu'il est déçu.</h2>
+    <p>Personne ne tient de fichier. Personne ne relance. Le client pense « je dois y retourner », puis la semaine passe.</p>
+    <div class="calcul">
+      <span class="gros">525 € par mois</span>
+      Exemple : 60 clients par mois, dont 1 sur 4 oublie de revenir. 15 clients × 35 € de panier moyen. Remplacez par vos propres chiffres : le résultat est rarement petit.
+    </div>
+  </div>
+</section>
+
+<section class="benefices">
+  <div class="wrap">
+    <h2>Ce que vous gagnez</h2>
+    <div>
+      <h3>Des clients qui reviennent plus tôt</h3>
+      <p>Le rappel part au moment où le client a naturellement besoin de vous, pas six mois après.</p>
+    </div>
+    <div>
+      <h3>Aucun travail pour vous</h3>
+      <p>Vous donnez le contact du client lors de l'encaissement. Le reste se fait sans vous.</p>
+    </div>
+    <div>
+      <h3>Un résultat que vous voyez</h3>
+      <p>Vous savez combien de clients sont revenus grâce aux rappels, et combien de chiffre cela représente.</p>
+    </div>
+  </div>
+</section>
+
+<section class="etapes">
+  <div class="wrap">
+    <h2>Comment ça se passe</h2>
+    <ol>
+      <li><strong>Vous réglez votre premier mois.</strong> Un paiement sécurisé, sur cette page.</li>
+      <li><strong>Je vous écris sous 24 h.</strong> Je vous demande votre délai habituel entre deux visites et votre offre de retour.</li>
+      <li><strong>Vos rappels partent.</strong> Je m'en occupe avec vous, et vous suivez les clients revenus.</li>
+    </ol>
+    <p>Retour démarre : pour l'instant, je fais la mise en place moi-même avec chaque commerce. Vos retours construisent l'outil.</p>
+  </div>
+</section>
+
+<section class="offre" id="offre">
+  <div class="wrap">
+    <h2>Votre mise en place est prête à démarrer</h2>
+    <p>Un seul client qui revient grâce au rappel rembourse déjà le mois.</p>
+    <p class="prix">29 € <span>par mois</span></p>
+    <p class="jour">Soit moins d'1 € par jour.</p>
+
+    <div class="garantie">
+      <h3>Satisfait ou remboursé, 30 jours</h3>
+      <p>Si Retour ne vous convient pas, écrivez-moi à <strong>dchermaev@gmail.com</strong> dans les 30 jours. Je vous rembourse votre premier mois en entier, sous 5 jours ouvrés, sans justification.</p>
+    </div>
+
+    <a class="btn" href="https://buy.stripe.com/test_eVq8wO9pvd750tt77Z6wE00">Je veux que mes clients reviennent</a>
+    <p class="note">Sans engagement, résiliable à tout moment. Paiement sécurisé par Stripe.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Vos questions</h2>
+    <details>
+      <summary>Est-ce que ça marche pour mon commerce ?</summary>
+      <p>Si vos clients reviennent à intervalles réguliers (coiffure, soins, entretien, restauration, boulangerie...), oui. Si vos clients n'achètent qu'une fois dans leur vie, non, et je vous le dirai avant que vous payiez davantage.</p>
+    </details>
+    <details>
+      <summary>Combien de temps ça me prend ?</summary>
+      <p>Une dizaine de minutes au départ pour me donner votre délai habituel et votre offre. Ensuite, presque rien : le rappel part sans vous.</p>
+    </details>
+    <details>
+      <summary>Et si je veux arrêter ?</summary>
+      <p>Un simple email suffit, c'est fait dans la journée. Vous ne payez plus rien le mois suivant, et la garantie de 30 jours s'applique à votre premier mois.</p>
+    </details>
+    <details>
+      <summary>À quoi sert exactement ce que je paie ?</summary>
+      <p>À la mise en place de vos rappels, à leur envoi au bon moment à vos clients, à l'offre de retour à usage unique, et au suivi des clients revenus et du chiffre généré.</p>
+    </details>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><a href="/mentions-legales.html">Mentions légales</a><a href="/cgv.html">Conditions générales de vente</a><a href="/confidentialite.html">Confidentialité</a></p>
+    <p>Retour. [RAISON SOCIALE ET NUMÉRO D'ENTREPRISE À COMPLÉTER]</p>
+  </div>
+</footer>
+
+</body>
+</html>
